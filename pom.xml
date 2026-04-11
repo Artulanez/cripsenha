@@ -12,7 +12,7 @@
 	<artifactId>cripsenha</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cripsenha</name>
-	<description>Projeto para processamento de usuários via RabbitMQ</description>
+	<description>Projeto para processamento de usuários via ActiveMQ</description>
 	<properties>
 		<java.version>21</java.version>
 		<camel.version>4.8.2</camel.version>
@@ -42,9 +42,10 @@
 			<groupId>org.apache.camel.springboot</groupId>
 			<artifactId>camel-spring-boot-starter</artifactId>
 		</dependency>
+		<!-- Substituído spring-rabbitmq por activemq -->
 		<dependency>
 			<groupId>org.apache.camel.springboot</groupId>
-			<artifactId>camel-spring-rabbitmq-starter</artifactId>
+			<artifactId>camel-activemq-starter</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel.springboot</groupId>

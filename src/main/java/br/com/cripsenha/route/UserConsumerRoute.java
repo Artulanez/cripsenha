@@ -17,8 +17,10 @@ public class UserConsumerRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-
-        from("spring-rabbitmq:{{rabbitmq.topic}}?queues={{rabbitmq.queue}}&routingKey=#&exchangeType=topic&autoDeclare=false")
+        // Consumindo de um tópico ActiveMQ
+        // A sintaxe para ActiveMQ consome de tópico é activemq:topic:nomeDoTopico
+        
+        from("activemq:topic:{{activemq.topic}}")
             .routeId("userConsumerRoute")
             .unmarshal().json(JsonLibrary.Jackson, UserDTO.class)
             .bean(userService, "processarUsuario");
